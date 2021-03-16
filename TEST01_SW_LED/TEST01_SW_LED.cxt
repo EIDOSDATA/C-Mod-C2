@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE Document [
+
+
+<!ELEMENT Document (Net*, Globals*, Lb+)>
+<!ATTLIST Document
+	Version CDATA #REQUIRED
+	Module CDATA #REQUIRED
+	Date CDATA #REQUIRED
+	Device CDATA #REQUIRED
+        Stepping CDATA #IMPLIED
+>
+
+<!ELEMENT Globals (InBuf*, GlblBuf*, ClkDiv*, SDot*)>
+
+<!ELEMENT Net (Activity?)>
+<!ATTLIST Net
+	NNm CDATA #REQUIRED
+	IoT (in | out | bidi | none) #REQUIRED
+	Loc CDATA #IMPLIED
+	ClkT (G | U) #IMPLIED
+	SNm CDATA #IMPLIED
+>
+
+<!ELEMENT Activity EMPTY>
+<!ATTLIST Activity
+	Freq CDATA #IMPLIED
+	DutyCycle CDATA #IMPLIED
+>
+
+
+
+<!ELEMENT InBuf (IPort, OPort*)>
+<!ATTLIST InBuf
+	Nm CDATA #REQUIRED
+	IOS (LVTTL | LVCMOS15 | LVCMOS18 | LVCMOS25 | LVCMOS33 | HSTL_I | SSTL2_I | SSTL3_I | STRIG) #REQUIRED
+	DataGate (Y | N) #REQUIRED
+>
+
+<!ELEMENT GlblBuf (IPort)>
+<!ATTLIST GlblBuf
+	Nm CDATA #REQUIRED
+	GType (GOE | GSR | GCK | GCK2 | CDRST | GDGATE) #REQUIRED
+>
+
+<!ELEMENT ClkDiv (IPort, OPort)>
+<!ATTLIST ClkDiv
+	Nm CDATA #REQUIRED
+	DivideBy (2 | 4 | 6 | 8 | 10 | 12 | 14 | 16) #REQUIRED
+>
+
+<!ELEMENT SDot (IPort, OPort)>
+<!ATTLIST SDot
+	Nm CDATA #REQUIRED
+>
+
+
+<!ELEMENT Lb (LbT*, Mc*, SDot*)>
+<!ATTLIST Lb
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT LbT (OPort, IPort+)>
+<!ATTLIST LbT
+	Nm CDATA #REQUIRED
+	PtT (XBR_A | XBR_B | XBR_C | XBR_CT | XBR_CT_X) #REQUIRED
+>
+
+<!ELEMENT Mc (RMux*, ClkMux?, XorMux?, OeMux?, FbMux*, InBuf?, OutBuf?, DFlop?, Or?, SDot*)>
+<!ATTLIST Mc
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT Or (OPort, IPort+)>
+<!ATTLIST Or
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT ClkMux (IPort, OPort)>
+<!ATTLIST ClkMux
+	Nm CDATA #REQUIRED
+	Rate (1 | 2) #IMPLIED
+>
+
+<!ELEMENT RMux (IPort)>
+<!ATTLIST RMux
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT OeMux (IPort)>
+<!ATTLIST OeMux
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT XorMux (IPort)>
+<!ATTLIST XorMux
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT FbMux (IPort)>
+<!ATTLIST FbMux
+	Nm CDATA #REQUIRED
+>
+
+<!ELEMENT OutBuf (IPort, OPort, CntlPort*)>
+<!ATTLIST OutBuf
+	Nm CDATA #REQUIRED
+	IOS (LVTTL | LVCMOS15 | LVCMOS18 | LVCMOS25 | LVCMOS33 | HSTL_I | SSTL2_I | SSTL3_I | STRIG) #REQUIRED
+>
+
+<!ELEMENT DFlop (FlopPort+)>
+<!ATTLIST DFlop
+	Nm CDATA #REQUIRED
+>
+
+
+<!ELEMENT FlopPort EMPTY>
+<!ATTLIST FlopPort
+	NNm CDATA #REQUIRED
+	Port (D | CLK | Q | RST | PST | CE) #REQUIRED
+>
+
+<!ELEMENT IPort EMPTY>
+<!ATTLIST IPort
+	NNm CDATA #REQUIRED
+>
+
+<!ELEMENT OPort EMPTY>
+<!ATTLIST OPort
+	NNm CDATA #REQUIRED
+>
+
+<!ELEMENT CntlPort EMPTY>
+<!ATTLIST CntlPort
+	NNm CDATA #REQUIRED
+>
+]>
+<Document Date="Mar 16 14:10:39 2021" Device="XC2C64-5VQ44" Module="TEST01_SW_LED" Stepping="0" Version="3"><Net IoT="out" Loc="FB4_11" NNm="LED0" SNm="LED0"/><Net IoT="out" Loc="FB4_13" NNm="LED1" SNm="LED1"/><Net IoT="out" Loc="FB4_14" NNm="LED2" SNm="LED2"/><Net IoT="out" Loc="FB4_15" NNm="LED3" SNm="LED3"/><Net IoT="none" NNm="FB4_PT40" SNm="LED0_MC.Q"/><Net IoT="none" NNm="FB4_PT52" SNm="FB4_PT52"/><Net IoT="none" NNm="FB4_PT46" SNm="LED1_MC.Q"/><Net IoT="none" NNm="FB4_14_OR" SNm="LED2_MC.Q"/><Net IoT="in" Loc="FB4_2" NNm="SW0" SNm="SW0"/><Net IoT="in" Loc="FB4_7" NNm="SW1" SNm="SW1"/><Net IoT="none" NNm="PT_GND" SNm="PT_GND"/><Net IoT="none" NNm="FB4_2_I" SNm="SW0_II/UIM"/><Net IoT="none" NNm="FB4_7_I" SNm="SW1_II/UIM"/><Net IoT="none" NNm="FB4_PT0" SNm="FB4_PT0"/><Net IoT="none" NNm="FB4_PT1" SNm="FB4_PT1"/><Globals/><Lb Nm="FB1"><Mc Nm="FB1_1"/><Mc Nm="FB1_2"/><Mc Nm="FB1_3"/><Mc Nm="FB1_4"/><Mc Nm="FB1_5"/><Mc Nm="FB1_6"/><Mc Nm="FB1_7"/><Mc Nm="FB1_8"/><Mc Nm="FB1_9"/><Mc Nm="FB1_10"/><Mc Nm="FB1_11"/><Mc Nm="FB1_12"/><Mc Nm="FB1_13"/><Mc Nm="FB1_14"/><Mc Nm="FB1_15"/><Mc Nm="FB1_16"/></Lb><Lb Nm="FB2"><Mc Nm="FB2_1"/><Mc Nm="FB2_2"/><Mc Nm="FB2_3"/><Mc Nm="FB2_4"/><Mc Nm="FB2_5"/><Mc Nm="FB2_6"/><Mc Nm="FB2_7"/><Mc Nm="FB2_8"/><Mc Nm="FB2_9"/><Mc Nm="FB2_10"/><Mc Nm="FB2_11"/><Mc Nm="FB2_12"/><Mc Nm="FB2_13"/><Mc Nm="FB2_14"/><Mc Nm="FB2_15"/><Mc Nm="FB2_16"/></Lb><Lb Nm="FB3"><Mc Nm="FB3_1"/><Mc Nm="FB3_2"/><Mc Nm="FB3_3"/><Mc Nm="FB3_4"/><Mc Nm="FB3_5"/><Mc Nm="FB3_6"/><Mc Nm="FB3_7"/><Mc Nm="FB3_8"/><Mc Nm="FB3_9"/><Mc Nm="FB3_10"/><Mc Nm="FB3_11"/><Mc Nm="FB3_12"/><Mc Nm="FB3_13"/><Mc Nm="FB3_14"/><Mc Nm="FB3_15"/><Mc Nm="FB3_16"/></Lb><Lb Nm="FB4"><LbT Nm="FB4_PT0" PtT="XBR_CT_X"><OPort NNm="FB4_PT0"/><IPort NNm="FB4_7_I"/><IPort NNm="FB4_2_I"/></LbT><LbT Nm="FB4_PT1" PtT="XBR_CT_X"><OPort NNm="FB4_PT1"/><IPort NNm="FB4_7_I"/><IPort NNm="FB4_2_I"/></LbT><LbT Nm="FB4_PT40" PtT="XBR_C"><OPort NNm="FB4_PT40"/><IPort NNm="FB4_7_I"/><IPort NNm="FB4_2_I"/></LbT><LbT Nm="FB4_PT46" PtT="XBR_C"><OPort NNm="FB4_PT46"/><IPort NNm="FB4_7_I"/><IPort NNm="FB4_2_I"/></LbT><LbT Nm="FB4_PT52" PtT="XBR_C"><OPort NNm="FB4_PT52"/><IPort NNm="FB4_7_I"/><IPort NNm="FB4_2_I"/></LbT><Mc Nm="FB4_1"/><Mc Nm="FB4_2"><FbMux Nm="FB4_2_P"><IPort NNm="FB4_2_I"/></FbMux><InBuf DataGate="N" IOS="LVCMOS18" Nm="FB4_2_I"><IPort NNm="SW0"/><OPort NNm="FB4_2_I"/></InBuf></Mc><Mc Nm="FB4_3"/><Mc Nm="FB4_4"/><Mc Nm="FB4_5"/><Mc Nm="FB4_6"/><Mc Nm="FB4_7"><FbMux Nm="FB4_7_P"><IPort NNm="FB4_7_I"/></FbMux><InBuf DataGate="N" IOS="LVCMOS18" Nm="FB4_7_I"><IPort NNm="SW1"/><OPort NNm="FB4_7_I"/></InBuf></Mc><Mc Nm="FB4_8"/><Mc Nm="FB4_9"/><Mc Nm="FB4_10"/><Mc Nm="FB4_11"><XorMux Nm="FB4_11_AND"><IPort NNm="FB4_PT40"/></XorMux><InBuf DataGate="N" IOS="LVCMOS18" Nm="FB4_11_I"><IPort NNm="LED0"/></InBuf><OutBuf IOS="LVCMOS18" Nm="FB4_11_O"><IPort NNm="FB4_PT40"/><OPort NNm="LED0"/><CntlPort NNm="PT_VCC"/></OutBuf></Mc><Mc Nm="FB4_12"/><Mc Nm="FB4_13"><XorMux Nm="FB4_13_AND"><IPort NNm="FB4_PT46"/></XorMux><InBuf DataGate="N" IOS="LVCMOS18" Nm="FB4_13_I"><IPort NNm="LED1"/></InBuf><OutBuf IOS="LVCMOS18" Nm="FB4_13_O"><IPort NNm="FB4_PT46"/><OPort NNm="LED1"/><CntlPort NNm="PT_VCC"/></OutBuf></Mc><Mc Nm="FB4_14"><InBuf DataGate="N" IOS="LVCMOS18" Nm="FB4_14_I"><IPort NNm="LED2"/></InBuf><OutBuf IOS="LVCMOS18" Nm="FB4_14_O"><IPort NNm="FB4_14_OR"/><OPort NNm="LED2"/><CntlPort NNm="PT_VCC"/></OutBuf><Or Nm="FB4_14_OR"><OPort NNm="FB4_14_OR"/><IPort NNm="FB4_PT1"/><IPort NNm="FB4_PT0"/></Or></Mc><Mc Nm="FB4_15"><XorMux Nm="FB4_15_AND"><IPort NNm="FB4_PT40"/></XorMux><InBuf DataGate="N" IOS="LVCMOS18" Nm="FB4_15_I"><IPort NNm="LED3"/></InBuf><OutBuf IOS="LVCMOS18" Nm="FB4_15_O"><IPort NNm="FB4_PT40"/><OPort NNm="LED3"/><CntlPort NNm="PT_VCC"/></OutBuf></Mc><Mc Nm="FB4_16"/></Lb></Document>

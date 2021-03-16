@@ -1,0 +1,37 @@
+MDF Database:  version 1.0
+MDF_INFO | TEST01_SW_LED | XC2C64-5-VQ44
+MACROCELL | 3 | 10 | LED0_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | SW1  | SW0
+INPUTP | 2 | 38 | 32
+EQ | 1 | 
+   LED0 = SW1 & SW0;	// (1 pt, 2 inp)
+
+MACROCELL | 3 | 12 | LED1_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | SW1  | SW0
+INPUTP | 2 | 38 | 32
+EQ | 1 | 
+   !LED1 = !SW1 & !SW0;	// (1 pt, 2 inp)
+
+MACROCELL | 3 | 13 | LED2_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | SW1  | SW0
+INPUTP | 2 | 38 | 32
+EQ | 2 | 
+   LED2 = SW1 & !SW0
+	# !SW1 & SW0;	// (2 pt, 2 inp)
+
+MACROCELL | 3 | 14 | LED3_MC
+ATTRIBUTES | 1074004738 | 0
+INPUTS | 2 | SW1  | SW0
+INPUTP | 2 | 38 | 32
+EQ | 1 | 
+   !LED3 = SW1 & SW0;	// (1 pt, 2 inp)
+
+PIN | SW1 | 64 | 16 | LVCMOS18 | 38 | 4 | 3 | 10 | 3 | 12 | 3 | 13 | 3 | 14
+PIN | SW0 | 64 | 16 | LVCMOS18 | 32 | 4 | 3 | 10 | 3 | 12 | 3 | 13 | 3 | 14
+PIN | LED0 | 536871040 | 0 | LVCMOS18 | 46
+PIN | LED1 | 536871040 | 0 | LVCMOS18 | 48
+PIN | LED2 | 536871040 | 0 | LVCMOS18 | 49
+PIN | LED3 | 536871040 | 0 | LVCMOS18 | 51

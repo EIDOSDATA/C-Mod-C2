@@ -1,0 +1,5 @@
+# begin LFP file C:\Users\eidos\Desktop\CMOD C2\TEST01_SW_LED\TEST01_SW_LED.lfp
+designfile TEST01_SW_LED.vhd
+parttype xc2c64-vq44-5
+bus_delimiter 0;
+set_busdelim_onsave 1;

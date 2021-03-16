@@ -1,0 +1,12 @@
+xst -intstyle ise -ifn "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.xst" -ofn "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc TEST01_SW_LED.ucf -p xc2c64-VQ44-5 "TEST01_SW_LED.ngc" TEST01_SW_LED.ngd  
+cpldfit -intstyle ise -p xc2c64-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TEST01_SW_LED.ngd 
+XSLTProcess TEST01_SW_LED_build.xml 
+tsim -intstyle ise TEST01_SW_LED TEST01_SW_LED.nga 
+hprep6 -s IEEE1149 -i TEST01_SW_LED 
+xst -intstyle ise -ifn "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.xst" -ofn "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc TEST01_SW_LED.ucf -p xc2c64-VQ44-5 "TEST01_SW_LED.ngc" TEST01_SW_LED.ngd  
+cpldfit -intstyle ise -p xc2c64-5-VQ44 -ofmt vhdl -optimize density -htmlrpt -loc on -slew fast -init low -inputs 32 -pterms 28 -unused keeper -terminate keeper -iostd LVCMOS18 TEST01_SW_LED.ngd 
+XSLTProcess TEST01_SW_LED_build.xml 
+tsim -intstyle ise TEST01_SW_LED TEST01_SW_LED.nga 
+hprep6 -s IEEE1149 -i TEST01_SW_LED 

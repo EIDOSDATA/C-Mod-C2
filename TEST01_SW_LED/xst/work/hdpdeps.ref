@@ -1,0 +1,11 @@
+V3 4
+FL "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.vhd" 2021/03/16.14:10:22 P.20131013
+AR work/TEST01_SW_LED/RTL -1 \
+      FL "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.vhd" \
+      EN work/TEST01_SW_LED 1615871427
+EN work/TEST01_SW_LED 1615871427 \
+      FL "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.vhd" \
+      PB ieee/std_logic_1164 1381692176
+AR work/TEST01_SW_LED/Behavioral 1615871428 \
+      FL "C:/Users/eidos/Desktop/CMOD C2/TEST01_SW_LED/TEST01_SW_LED.vhd" \
+      EN work/TEST01_SW_LED 1615871427
